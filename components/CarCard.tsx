@@ -8,7 +8,7 @@ import { CarProps } from "@/types";
 import CustomButton from "./CustomButton";
 import CarDetails from "./CarDetails";
 // utils function
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
 
 interface CarCardProps {
   car: CarProps;
@@ -38,7 +38,7 @@ const CarCard = ({ car }: CarCardProps) => {
       {/* Image */}
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src="/hero.png"
+          src={generateCarImageUrl(car)}
           alt="car model"
           fill
           priority
